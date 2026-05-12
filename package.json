@@ -24,7 +24,7 @@
     "@types/object-hash": "^3.0.6",
     "app-root-path": "^3.1.0",
     "awilix": "^8.0.1",
-    "better-sqlite3": "^12.6.2",
+    "better-sqlite3": "^12.10.0",
     "convict": "^6.2.4",
     "convict-format-with-validator": "^6.2.0",
     "dayjs": "^1.11.11",

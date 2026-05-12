@@ -53,6 +53,7 @@ describe('MyController Integration Tests', () => {
 	});
 
 	function createProducts(): ProductInsert[] {
+		// Using 24 hours in milliseconds to calculate expiry and season dates
 		const d = 24 * 60 * 60 * 1000;
 		return [
 			{
