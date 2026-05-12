@@ -21,7 +21,7 @@ describe('ProductService', () => {
 	beforeEach(async () => {
 		({databaseMock: db, databaseName, close: closeDatabase} = await createDatabaseMock());
 		notificationServiceMock = mockDeep<INotificationService>();
-		productService = new ProductService({ns: notificationServiceMock, db});
+		productService = new ProductService({notificationService: notificationServiceMock, db});
 	});
 
 	afterEach(async () => {

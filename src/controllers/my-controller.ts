@@ -13,8 +13,8 @@ export const myController = fastifyPlugin(async server => {
 			}),
 		},
 	}, async (request, reply) => {
-		const os = server.diContainer.resolve('os');
-		const orderId = await os.processOrder(request.params.orderId);
+		const orderService = server.diContainer.resolve('orderService');
+		const orderId = await orderService.processOrder(request.params.orderId);
 		return reply.send({orderId});
 	});
 });

@@ -6,11 +6,11 @@ import {type ProductService} from './product.service.js';
 
 export class OrderService {
 	private readonly db: Database;
-	private readonly ps: ProductService;
+	private readonly productService: ProductService;
 
-	public constructor({db, ps}: Pick<Cradle, 'db' | 'ps'>) {
+	public constructor({db, productService}: Pick<Cradle, 'db' | 'productService'>) {
 		this.db = db;
-		this.ps = ps;
+		this.productService = productService;
 	}
 
 	public async processOrder(orderId: number): Promise<number> {
@@ -31,7 +31,7 @@ export class OrderService {
 		}
 
 		for (const {product} of order.products) {
-			await this.ps.processProduct(product);
+			await this.productService.processProduct(product);
 		}
 
 		return order.id;
